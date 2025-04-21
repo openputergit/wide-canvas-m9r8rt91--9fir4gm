@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zepto - Grocery Delivery</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #e5f9fc;
+        }
+        .zepto-purple {
+            background-color: #8325b0;
+        }
+        .zepto-green {
+            color: #00a151;
+        }
+        .tab-active {
+            border-bottom: 3px solid #8325b0;
+        }
+        .discount-badge {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        .add-button {
+            color: #ec4899;
+            border-color: #ec4899;
+        }
+        .daily-tag {
+            background-color: #3d6d4d;
+            color: white;
+            border-radius: 20px;
+            padding: 2px 8px;
+            font-size: 12px;
+        }
+        .category-icon {
+            width: 40px;
+            height: 40px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body class="pb-20">
+    <!-- Header -->
+    <header class="p-3 bg-cyan-100">
+        <!-- Top Bar -->
+        <div class="flex items-center justify-between mb-3">
+            <div class="flex space-x-2">
+                <div class="rounded-full zepto-purple text-white px-6 py-2 font-bold">
+                    <span class="text-xl">zepto</span>
+                </div>
+                <div class="rounded-full bg-white px-6 py-2 font-bold">
+                    <span class="zepto-green text-xl">zepto <span>Super Saver</span></span>
+                </div>
+            </div>
+            <div class="bg-white rounded-full px-4 py-2 text-pink-500 font-bold">
+                Win ₹200
+            </div>
+        </div>
+
+        <!-- Location and Delivery Time -->
+        <div class="flex items-center justify-between mb-3">
+            <div class="flex items-center">
+                <div class="rounded-full bg-black p-2 mr-2">
+                    <i class="bi bi-person-fill text-white"></i>
+                </div>
+                <div>
+                    <h2 class="text-xl font-bold">Delivery In 6 Mins</h2>
+                    <div class="flex items-center">
+                        <span>Kopar Khairane - Shashikant Ra...</span>
+                        <i class="bi bi-chevron-down ml-1"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="relative mb-3">
+            <input type="text" placeholder='Search for "samosa"' class="w-full p-3 pl-10 rounded-lg border border-gray-300">
+            <i class="bi bi-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+        </div>
+
+        <!-- Categories -->
+        <div class="flex justify-between text-center">
+            <div class="flex flex-col items-center">
+                <div class="category-icon mb-1">
+                    <i class="bi bi-basket text-2xl"></i>
+                </div>
+                <span class="text-sm">Grub & Munch</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <div class="category-icon mb-1">
+                    <i class="bi bi-droplet text-2xl"></i>
+                </div>
+                <span class="text-sm">Bath & Body</span>
+            </div>
+            <div class="flex flex-col items-center tab-active pb-1">
+                <div class="category-icon mb-1">
+                    <i class="bi bi-apple text-2xl"></i>
+                </div>
+                <span class="text-sm">Fresh</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <div class="category-icon mb-1">
+                    <i class="bi bi-star text-2xl"></i>
+                </div>
+                <span class="text-sm">New</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <div class="category-icon mb-1">
+                    <i class="bi bi-house text-2xl"></i>
+                </div>
+                <span class="text-sm">Home</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Banner -->
+    <div class="relative overflow-hidden mt-3">
+        <div class="p-4 pt-2 pb-8">
+            <div class="text-5xl font-bold tracking-tighter leading-tight text-gray-800">
+                LOWEST PRICES
+            </div>
+            <div class="text-xl text-gray-600 uppercase tracking-wider">
+                ON ALL YOUR FRESH NEEDS
+            </div>
+
+            <div class="absolute right-4 top-0 bg-green-900 rounded-full w-20 h-20 flex items-center justify-center">
+                <span class="text-yellow-100 text-3xl font-bold">₹20</span>
+            </div>
+            
+            <div class="bg-white rounded-full inline-block px-4 py-2 mt-2 font-bold text-gray-700 transform -rotate-2">
+                NO MIN. ORDER VALUE
+            </div>
+
+            <img src="https://images.unsplash.com/photo-1589927986089-35812388d1c4?auto=format&fit=crop&q=80" class="absolute right-0 bottom-0 w-40 h-40 object-contain" alt="Melon">
+        </div>
+    </div>
+
+    <!-- Products -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 p-2">
+        <!-- Product 1: Potato -->
+        <div class="bg-white rounded-lg overflow-hidden">
+            <div class="relative">
+                <div class="absolute top-2 left-0 zepto-purple text-white py-1 px-3 rounded-r-full font-bold discount-badge">
+                    57% Off
+                </div>
+                <img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?auto=format&fit=crop&q=80" alt="Potato" class="w-full h-48 object-cover">
+                <button class="absolute bottom-2 right-2 bg-white border-2 px-6 py-1 rounded-md font-bold add-button">
+                    ADD
+                </button>
+            </div>
+            <div class="p-3">
+                <div class="flex items-center text-gray-600 mb-1">
+                    <i class="bi bi-clock-history mr-1"></i>
+                    <span>6 Mins</span>
+                </div>
+                <h3 class="text-xl font-bold">Potato</h3>
+                <div class="text-gray-600">1 kg</div>
+                <div class="flex items-center mt-2">
+                    <span class="text-gray-400 line-through text-sm">₹69</span>
+                    <span class="text-xl font-bold ml-2">₹29</span>
+                    <span class="daily-tag ml-2">daily</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 2: Mango Alphonso -->
+        <div class="bg-white rounded-lg overflow-hidden">
+            <div class="relative">
+                <div class="absolute top-2 left-0 zepto-purple text-white py-1 px-3 rounded-r-full font-bold discount-badge">
+                    30% Off
+                </div>
+                <img src="https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&q=80" alt="Mango" class="w-full h-48 object-cover">
+                <button class="absolute bottom-2 right-2 bg-white border-2 px-6 py-1 rounded-md font-bold add-button">
+                    ADD
+                </button>
+            </div>
+            <div class="p-3">
+                <div class="flex items-center text-gray-600 mb-1">
+                    <i class="bi bi-clock-history mr-1"></i>
+                    <span>6 Mins</span>
+                </div>
+                <h3 class="text-xl font-bold">Mango Alphonso (Hapus)</h3>
+                <div class="text-gray-600">2 pcs (350-400 g)</div>
+                <div class="flex items-center mt-2">
+                    <span class="text-gray-400 line-through text-sm">₹243</span>
+                    <span class="text-xl font-bold ml-2">₹169</span>
+                    <span class="daily-tag ml-2">daily</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 3: Cauliflower -->
+        <div class="bg-white rounded-lg overflow-hidden">
+            <div class="relative">
+                <div class="absolute top-2 left-0 zepto-purple text-white py-1 px-3 rounded-r-full font-bold discount-badge">
+                    46% Off
+                </div>
+                <img src="https://images.unsplash.com/photo-1568584711075-3d021a7c3ca3?auto=format&fit=crop&q=80" alt="Cauliflower" class="w-full h-48 object-cover">
+                <button class="absolute bottom-2 right-2 bg-white border-2 px-6 py-1 rounded-md font-bold add-button">
+                    ADD
+                </button>
+            </div>
+            <div class="p-3">
+                <div class="flex items-center text-gray-600 mb-1">
+                    <i class="bi bi-clock-history mr-1"></i>
+                    <span>6 Mins</span>
+                </div>
+                <h3 class="text-xl font-bold">Cauliflower</h3>
+                <div class="text-gray-600">1 pc</div>
+                <div class="flex items-center mt-2">
+                    <span class="text-gray-400 line-through text-sm">₹45</span>
+                    <span class="text-xl font-bold ml-2">₹24</span>
+                    <span class="daily-tag ml-2">daily</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Free Delivery Banner -->
+    <div class="bg-yellow-100 p-3 flex items-center justify-center fixed bottom-16 left-0 right-0">
+        <i class="bi bi-lock-fill mr-2"></i>
+        <span>Shop for ₹99 to unlock FREE delivery with</span>
+        <span class="daily-tag ml-2">daily</span>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <div class="fixed bottom-0 left-0 right-0 bg-white border-t flex justify-between items-center">
+        <div class="flex flex-col items-center p-3 text-purple-600">
+            <i class="bi bi-arrow-left text-xl"></i>
+            <span class="text-xs">Back</span>
+        </div>
+        <div class="flex flex-col items-center p-3 text-purple-600">
+            <div class="bg-purple-600 text-white rounded-full w-8 h-8 flex items-center justify-center">
+                <span class="text-xl">z</span>
+            </div>
+            <span class="text-xs font-bold">Zepto</span>
+        </div>
+        <div class="flex flex-col items-center p-3">
+            <i class="bi bi-grid text-xl"></i>
+            <span class="text-xs">Categories</span>
+        </div>
+        <div class="flex flex-col items-center p-3">
+            <div class="rounded-full border-2 border-blue-900 w-12 h-12 flex items-center justify-center">
+                <span class="text-blue-900 text-xs font-bold">BRAND OF THE DAY</span>
+            </div>
+        </div>
+        <div class="flex flex-col items-center p-3">
+            <div class="bg-orange-500 text-white px-2 py-1 rounded-full text-xs">
+                DEAL
+            </div>
+            <span class="text-xs">Cafe</span>
+        </div>
+        <div class="flex flex-col items-center p-3">
+            <i class="bi bi-bag text-xl"></i>
+            <span class="text-xs">Buy Again</span>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle add buttons
+            const addButtons = document.querySelectorAll('.add-button');
+            addButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    alert('Product added to cart!');
+                });
+            });
+
+            // Handle category tabs
+            const categoryTabs = document.querySelectorAll('.flex.flex-col.items-center');
+            categoryTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Remove active class from all tabs
+                    categoryTabs.forEach(t => t.classList.remove('tab-active'));
+                    // Add active class to clicked tab
+                    this.classList.add('tab-active');
+                });
+            });
+        });
+    </script>
+<script>document.body.addEventListener('wheel', e => { if (!e.ctrlKey) return; e.preventDefault(); return }, { passive: false })</script>
+	</body>
+</html>
